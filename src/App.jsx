@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import Rating from "./components/Rating";
 
 const App = () => {
   return (
-<div>
-  
-</div>
-  )
-}
+    <div className="font-kanit">
+      <Rating />
+    </div>
+  );
+};
 
-export default App
+export default App;
