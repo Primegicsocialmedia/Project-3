@@ -5,6 +5,12 @@ import { useState } from "react";
 const Rating = () => {
 
     const [rating,setRating] = useState(0)
+
+    const handleRating = (starIndex,isLeftHalf) => {
+      const newRating = isLeftHalf ? starIndex + 0.5 : starIndex + 1
+      setRating(newRating)
+    }
+
   return (
     <div className="flex justify-center items-center min-h-screen bg-red-50">
       <div className="bg-[#f5ffbe] rounded shadow-xl text-center p-6 sm:p-10 md:p-14 lg:p-18">
@@ -12,7 +18,7 @@ const Rating = () => {
           Star Rating
         </h2>
         <div className="flex justify-center mb-4 gap-1 sm:gap-2">
-            {Array.from({length :5},(_, index) => <Star key={index} index={index} rating={rating} setRating={setRating}/>)}
+            {Array.from({length :5},(_, index) => <Star key={index} index={index} rating={rating} onRatingChange={handleRating}/>)}
          
          
         </div>
